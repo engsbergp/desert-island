@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c1t602ai1xpjw"]
+
+[sub_resource type="TileSet" id="TileSet_tnj7k"]
+
+[node name="Airplane" type="Node2D" unique_id=1665371095]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1419323886]
+tile_set = SubResource("TileSet_tnj7k")
+format = 2
+layer_0/name = "1"
+layer_0/z_index = -2
+layer_1/name = "2"
+layer_1/z_index = -1
