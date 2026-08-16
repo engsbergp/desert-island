@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://blc0im7tm0rc1"]
+
+[ext_resource type="PackedScene" uid="uid://x36biovwvvpc" path="res://characters/Player_lv1.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://dc0331wbnwa4r" path="res://characters/chicken.tscn" id="2_0wfyh"]
+
+[node name="Main" type="Node2D" unique_id=139439908]
+
+[node name="Player_lv1" parent="." unique_id=1702656646 instance=ExtResource("1_o5qli")]
+position = Vector2(138, 109)
+scale = Vector2(1.25, 1.25)
+
+[node name="Chicken" parent="." unique_id=1429891066 instance=ExtResource("2_0wfyh")]
+position = Vector2(211, 106)
+scale = Vector2(1.25, 1.25)
