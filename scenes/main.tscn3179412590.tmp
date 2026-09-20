@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://blc0im7tm0rc1"]
+
+[ext_resource type="Script" uid="uid://cxeopmrgrl4e0" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="Script" uid="uid://dkm53q2vnad2t" path="res://scenes/day_night_cycle.gd" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://d2nq6yflrop00" path="res://scenes/start.tscn" id="3_sugp2"]
+
+[node name="Main" type="Node2D" unique_id=139439908]
+script = ExtResource("1_jyhfs")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1058041514]
+color = Color(0.81398684, 0.6468198, 0.5583444, 1)
+script = ExtResource("2_sugp2")
+
+[node name="LevelRoot" parent="." unique_id=658908615 instance=ExtResource("3_sugp2")]
+position = Vector2(7, 7)

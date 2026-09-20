@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://x36biovwvvpc"]
 
 [ext_resource type="Texture2D" uid="uid://qg4fn8wfavi7" path="res://assets/images/characters/original-sprites/male1.png" id="1_hwbb7"]
-[ext_resource type="Script" uid="uid://c47xtdojbp5p7" path="res://scripts/player_lv_1.gd" id="1_tvka6"]
+[ext_resource type="Script" uid="uid://c47xtdojbp5p7" path="res://scripts/characters/player_lv_1.gd" id="1_tvka6"]
 [ext_resource type="Texture2D" uid="uid://dyv7fhaxtfhu6" path="res://assets/images/characters/original-sprites/male1_action.png" id="2_yg772"]
 [ext_resource type="Texture2D" uid="uid://oj7w2daf3ham" path="res://assets/images/characters/original-sprites/male1_260815.png" id="3_fi0he"]
 [ext_resource type="AudioStream" uid="uid://bvg5gnil4q6l7" path="res://assets/sfx/poof.wav" id="5_wexh0"]
+[ext_resource type="Script" uid="uid://bgrwxqrjrq03d" path="res://scripts/util/camera_2d.gd" id="6_r83hg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fi0he"]
 atlas = ExtResource("2_yg772")
@@ -265,6 +266,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnj7k"]
+size = Vector2(6, 8)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wexh0"]
 size = Vector2(12, 12)
 
@@ -279,12 +283,21 @@ animation = &"idle_right"
 stream = ExtResource("5_wexh0")
 pitch_scale = 4.0
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1800664358]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_tnj7k")
+
 [node name="Hitbox" type="Area2D" parent="." unique_id=1149664832]
 position = Vector2(3, 0)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=711716845]
 shape = SubResource("RectangleShape2D_wexh0")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1029200920]
+limit_left = 0
+limit_top = 0
+script = ExtResource("6_r83hg")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
